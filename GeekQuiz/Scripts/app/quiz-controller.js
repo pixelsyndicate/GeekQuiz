@@ -16,15 +16,17 @@
             $scope.title = "loading question...";
             $scope.options = [];
 
-            $http.get("/api/trivia").success(function (data, status, headers, config) {
-                $scope.options = data.options;
-                $scope.title = data.title;
-                $scope.answered = false;
-                $scope.working = false;
-            }).error(function (data, status, headers, config) {
-                $scope.title = "Oops... something went wrong";
-                $scope.working = false;
-            });
+            $http.get("/api/trivia")
+                .success(function (data, status, headers, config) {
+                    $scope.options = data.options;
+                    $scope.title = data.title;
+                    $scope.answered = false;
+                    $scope.working = false;
+                })
+                .error(function (data, status, headers, config) {
+                    $scope.title = "Oops... something went wrong";
+                    $scope.working = false;
+                });
         };
 
 
@@ -32,12 +34,15 @@
             $scope.working = true;
             $scope.answered = true;
 
-            $http.post('/api/trivia', { 'questionId': option.questionId, 'optionId': option.id }).success(function (data, status, headers, config) {
-                $scope.correctAnswer = (data === true);
-                $scope.working = false;
-            }).error(function (data, status, headers, config) {
-                $scope.title = "Oops... something went wrong";
-                $scope.working = false;
-            });
+            $http
+                .post('/api/trivia', { 'questionId': option.questionId, 'optionId': option.id })
+                .success(function (data, status, headers, config) {
+                    $scope.correctAnswer = (data === true);
+                    $scope.working = false;
+                })
+                .error(function (data, status, headers, config) {
+                    $scope.title = "Oops... something went wrong";
+                    $scope.working = false;
+                });
         };
     });
