@@ -52,3 +52,14 @@ The question and the indicator if it was answered correctly is exposed by {{answ
 The potential answers (options) are exposed as buttons with ng-repeat="option in options" and written as {{option.title}}
 
 Button click events are handled with .sendAnswer(option)
+
+#The WebApi
+
+the Json is formatted with the CamelCasePropertyNamesContractResolver, which automatically converts property names to camel case, which is the general convention for property names in JavaScript.
+
+Question requests are passed back as Json, only the question, the question id and a collection of answers with their own id's and a reference to the question.
+
+
+{"options":
+  [{"id":49,"title":"1","questionId":13},{"id":50,"title":"2","questionId":13},{"id":51,"title":"3","questionId":13},{"id":52,"title":"4","questionId":13}],
+  "id":13,"title":"Which Star Wars movie was filmed entirely in the studio?"}
