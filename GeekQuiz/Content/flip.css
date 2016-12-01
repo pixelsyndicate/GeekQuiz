@@ -15,16 +15,19 @@
 /* flip speed */
 .flip-container > div {
     position: absolute;
-    -moz-transition: .2s;
-    -o-transition: .2s;
-    -webkit-transition: .2s;
-    transition: .2s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    -webkit-transition: .5s;
+    -ms-transition: .5s;
+    transition: .5s;
 }
 
 /* hide back of pane during flip */
 .front, .back {
     -moz-backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -33,24 +36,27 @@
     -moz-transform: perspective(2000px) rotateY(0deg);
     -webkit-transform: perspective(2000px) rotateY(0deg);
     -o-transform: perspective(2000px) rotateY(0deg);
+    -ms-transform: perspective(2000px) rotateY(0deg);
     transform: perspective(2000px) rotateY(0deg);
 }
 
-    .flip-container div.front.flip {
-        -moz-transform: perspective(2000px) rotateY(179.9deg);
+.flip-container div.front.flip {
+    -moz-transform: perspective(2000px) rotateY(179.9deg);
         -webkit-transform: perspective(2000px) rotateY(179.9deg);
         -o-transform: perspective(2000px) rotateY(179.9deg);
-        transform: perspective(2000px) rotateY(179.9deg);
-    }
+    -ms-transform: perspective(2000px) rotateY(179.9deg);
+    transform: perspective(2000px) rotateY(179.9deg);
+}
 
 .flip-container div.back {
     -moz-transform: perspective(2000px) rotateY(-180deg);
     -webkit-transform: perspective(2000px) rotateY(-180deg);
     -o-transform: perspective(2000px) rotateY(-180deg);
+    -ms-transform: perspective(2000px) rotateY(-180deg);
     transform: perspective(2000px) rotateY(-180deg);
 }
 
-    .flip-container div.back.flip {
+.flip-container div.back.flip {
         -moz-transform: perspective(2000px) rotateY(0deg);
         -webkit-transform: perspective(2000px) rotateY(0deg);
         -ms-transform: perspective(2000px) rotateY(0);

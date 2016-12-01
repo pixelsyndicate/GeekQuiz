@@ -14,9 +14,7 @@
 // places, or events is intended or should be inferred.
 // ----------------------------------------------------------------------------------
 
-using System;
 using System.Data.Entity;
-using System.Web;
 
 namespace GeekQuiz.Models
 {
